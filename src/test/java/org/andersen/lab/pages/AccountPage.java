@@ -12,6 +12,9 @@ public class AccountPage extends BasePage {
     private final By contentMsg = By.cssSelector("div[id='content'] li:nth-child(1)");
     private final By orders  = By.cssSelector("li[class='woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders'] a");
 
+    private final By accountContent = By.cssSelector(".woocommerce-MyAccount-content");
+
+    private final By errorMessage = By.cssSelector("div[id='content'] li:nth-child(1)");
 
     public AccountPage(WebDriver driver) {
         super(driver);
@@ -22,6 +25,14 @@ public class AccountPage extends BasePage {
         driver.findElement(passwordFld).sendKeys(password);
         driver.findElement(loginBtn).click();
         return this;
+    }
+
+    public String getAccountContent(){
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(accountContent)).getText();
+    }
+
+    public String getErrorMessage() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(errorMessage)).getText();
     }
 
     public String getContentMessage(){

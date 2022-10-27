@@ -24,10 +24,10 @@ public class OrderProductTest  extends BaseTest {
                 getProductThumbnail().
                 clickAddToCartBtn(product.getName()).
                 clickViewCart().
-                checkout().setBillingAddress(billingAddress).
+                checkout().
+                setBillingAddress(billingAddress).
                 selectCashOnDeliveryTransfer().
                 placeOrder();
-
         Assert.assertEquals(checkoutPage.getNotice(), "Thank you. Your order has been received.");
 
     }
