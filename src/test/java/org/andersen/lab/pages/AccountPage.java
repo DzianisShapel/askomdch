@@ -9,7 +9,6 @@ public class AccountPage extends BasePage {
     private final By usernameFld =  By.cssSelector("#username");
     private final By passwordFld =  By.cssSelector("#password");
     private final By loginBtn =  By.cssSelector("button[value='Log in']");
-    private final By contentMsg = By.cssSelector("div[id='content'] li:nth-child(1)");
     private final By orders  = By.cssSelector("li[class='woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders'] a");
 
     private final By accountContent = By.cssSelector(".woocommerce-MyAccount-content");
@@ -35,9 +34,6 @@ public class AccountPage extends BasePage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(errorMessage)).getText();
     }
 
-    public String getContentMessage(){
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(contentMsg)).getText();
-    }
 
     public OrdersPage navigateToOrders(){
         wait.until(ExpectedConditions.visibilityOfElementLocated(orders)).click();

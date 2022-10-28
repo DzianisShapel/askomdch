@@ -29,6 +29,5 @@ public class OrderProductTest  extends BaseTest {
                 selectCashOnDeliveryTransfer().
                 placeOrder();
         Assert.assertEquals(checkoutPage.getNotice(), "Thank you. Your order has been received.");
-
     }
 }

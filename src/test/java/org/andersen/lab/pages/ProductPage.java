@@ -6,10 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ProductPage extends BasePage {
-    private final By addToCartBtn = By.cssSelector("button[value='1210']");
 
     private final By productTitle = By.cssSelector(".product_title.entry-title");
-    private final By alert = By.cssSelector("div[role='alert']");
 
 
     public ProductPage(WebDriver driver) {
@@ -23,15 +21,6 @@ public class ProductPage extends BasePage {
     public ProductPage load(){
         load("/product/dark-grey-jeans/");
         return this;
-    }
-
-    public ProductPage clickAddToCartBtn(){
-        driver.findElement(addToCartBtn).click();
-        return this;
-    }
-
-    public String getAlert(){
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(alert)).getText();
     }
 
 }
