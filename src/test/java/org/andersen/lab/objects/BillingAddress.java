@@ -91,24 +91,9 @@ public class BillingAddress {
         return country;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
-    }
 
     public String getState() {
         return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public String getCountryCode() {
-        return countryCode;
-    }
-
-    public String getStateCode() {
-        return stateCode;
     }
 
     @Override
