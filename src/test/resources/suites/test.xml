@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All tests">
+    <test name="Login tests">
+        <classes>
+            <class name="org.senla.mix.qa.tests.LoginTest"/>
+        </classes>
+    </test>
+    <test name="Register tests">
+        <classes>
+            <class name="org.senla.mix.qa.tests.RegistrationTest"/>
+        </classes>
+    </test>
+    <test name="Order product tests">
+        <classes>
+            <class name="org.senla.mix.qa.tests.OrderProductTest"/>
+        </classes>
+    </test>
+    <test name="Search tests">
+        <classes>
+            <class name="org.senla.mix.qa.tests.SearchTest"/>
+        </classes>
+    </test>
+</suite>
