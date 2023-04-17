@@ -10,7 +10,6 @@ import java.io.IOException;
 
 public class SearchTest extends BaseTest {
 
-
     @Test
     public void searchSpecificProduct() throws IOException {
         Product product = new Product(1202);

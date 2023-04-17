@@ -16,7 +16,7 @@ public class AppHeader extends BasePage {
     private final By contactUsLink = By.xpath("//a[text()='Contact Us']");
 
 
-    public StorePage navigateToStoreUsingMenu(){
+    public StorePage navigateToStorePage(){
         driver.findElement(storeMenuLink).click();
         return new StorePage(driver);
     }

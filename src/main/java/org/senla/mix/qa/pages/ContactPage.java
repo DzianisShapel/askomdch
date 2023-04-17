@@ -12,7 +12,7 @@ public class ContactPage extends BasePage {
 
     private final By contactEmail = By.xpath("//strong[normalize-space()='askomdch@gmail.com']");
 
-    public void checkContactEmailIsPresent(){
-        driver.findElement(contactEmail).isDisplayed();
+    public Boolean checkContactEmailIsPresent(){
+        return driver.findElement(contactEmail).isDisplayed();
     }
 }

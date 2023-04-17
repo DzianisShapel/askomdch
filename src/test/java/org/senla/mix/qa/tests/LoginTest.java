@@ -1,32 +1,20 @@
 package org.senla.mix.qa.tests;
 
-<<<<<<<< HEAD:src/test/java/org/senla/mix/qa/tests/LoginTest.java
+
 import org.senla.mix.qa.base.BaseTest;
 import org.senla.mix.qa.pages.AccountPage;
-import org.senla.mix.qa.pages.OrdersPage;
 import org.senla.mix.qa.utils.ConfigLoader;
 import org.senla.mix.qa.utils.FakerUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {
-========
-import io.qameta.allure.Description;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Story;
-import org.andersen.lab.base.BaseTest;
-import org.andersen.lab.pages.AccountPage;
-import org.andersen.lab.pages.OrdersPage;
-import org.andersen.lab.utils.ConfigLoader;
-import org.andersen.lab.utils.FakerUtils;
-import org.testng.Assert;
-import org.testng.annotations.Test;
-@Epic("Customer profile")
+
+
 public class AccountTest extends BaseTest {
->>>>>>>> origin/master:src/test/java/org/andersen/lab/tests/AccountTest.java
+
 
     @Test
-<<<<<<<< HEAD:src/test/java/org/senla/mix/qa/tests/LoginTest.java
     public void successfullLogin() {
         AccountPage accountPage = new AccountPage(getDriver()).load();
         accountPage.login(ConfigLoader.getInstance().getUsername(), ConfigLoader.getInstance().getPassword());
@@ -57,9 +45,5 @@ public class AccountTest extends BaseTest {
         Assert.assertEquals(ordersPage.getOrderDetailsTitle(), "Order details");
 <<<<<<<< HEAD:src/test/java/org/senla/mix/qa/tests/LoginTest.java
     }*/
-
-
-========
     }
->>>>>>>> origin/master:src/test/java/org/andersen/lab/tests/AccountTest.java
 }

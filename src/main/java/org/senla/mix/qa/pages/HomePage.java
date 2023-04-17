@@ -8,13 +8,13 @@ import org.openqa.selenium.WebDriver;
 
 public class HomePage  extends BasePage {
 
-    private AppHeader myHeader;
+    private AppHeader appHeader;
     private ProductThumbnail productThumbnail;
 
 
     public HomePage(WebDriver driver) {
         super(driver);
-        myHeader= new AppHeader(driver);
+        appHeader = new AppHeader(driver);
         productThumbnail = new ProductThumbnail(driver);
     }
 
@@ -24,8 +24,8 @@ public class HomePage  extends BasePage {
         return this;
     }
 
-    public AppHeader getMyHeader() {
-        return myHeader;
+    public AppHeader getAppHeader() {
+        return appHeader;
     }
 
     public ProductThumbnail getProductThumbnail() {
