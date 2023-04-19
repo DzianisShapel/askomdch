@@ -1,5 +1,6 @@
 package org.senla.mix.qa.pages;
 
+import org.openqa.selenium.support.ui.Select;
 import org.senla.mix.qa.base.BasePage;
 import org.senla.mix.qa.objects.BillingAddress;
 import org.openqa.selenium.By;
@@ -20,9 +21,13 @@ public class CheckoutPage extends BasePage {
 
     private final By alternateCountryDropdown = By.id("select2-billing_country-container");
     private final By alternateStateDropdown = By.id("select2-billing_state-container");
+    private final By countryDropdown = By.id("billing_country");
 
+    private final By stateDropdown = By.id("billing_state");
 
     private final By cashOnDeliveryTransferRadioBtn = By.id("payment_method_cod");
+
+    private final By overlay = By.cssSelector(".blockUI.blockOverlay");
 
 
 
@@ -95,24 +100,29 @@ public class CheckoutPage extends BasePage {
 
     public CheckoutPage selectCountry(String countryName){
 
-        wait.until(ExpectedConditions.elementToBeClickable(alternateCountryDropdown)).click();
+        Select dropdown = new Select(driver.findElement(countryDropdown));
+        dropdown.selectByVisibleText(countryName);
+        /*wait.until(ExpectedConditions.elementToBeClickable(alternateCountryDropdown)).click();
         WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
                 "//li[text()= '" + countryName + "']")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", e);
-        e.click();
+        e.click();*/
         return this;
     }
 
     public CheckoutPage selectState(String stateName){
-        wait.until(ExpectedConditions.elementToBeClickable(alternateStateDropdown)).click();
+        Select dropdown = new Select(driver.findElement(stateDropdown));
+        dropdown.selectByVisibleText(stateName);
+        /* wait.until(ExpectedConditions.elementToBeClickable(alternateStateDropdown)).click();
         WebElement e = wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//li[text() = '" + stateName + "']")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", e);
-        e.click();
+        e.click();*/
         return this;
     }
 
     public CheckoutPage selectCashOnDeliveryTransfer(){
+        waitForOverlaysToDisappear(overlay);
         WebElement e = wait.until(ExpectedConditions.elementToBeClickable(cashOnDeliveryTransferRadioBtn));
         if (!e.isSelected()) {
             e.click();

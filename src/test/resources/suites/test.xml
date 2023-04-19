@@ -20,4 +20,9 @@
             <class name="org.senla.mix.qa.tests.SearchTest"/>
         </classes>
     </test>
+    <test name="Store tests">
+        <classes>
+            <class name="org.senla.mix.qa.tests.StoreTest"/>
+        </classes>
+    </test>
 </suite>

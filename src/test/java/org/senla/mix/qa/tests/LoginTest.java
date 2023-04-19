@@ -31,19 +31,5 @@ public class AccountTest extends BaseTest {
         Assert.assertEquals(accountPage.getErrorMessage(), "Error: The password you entered for the username " + ConfigLoader.getInstance().getUsername() + " is incorrect. Lost your password?");
     }
 
-   /* @Test
-    public void LoginAndViewOrderedProducts() {
-========
-    @Description("Customer is able to navigate to orders and view ordered products")
-    @Story("View ordered products")
-    public void ViewOrderedProducts() {
->>>>>>>> origin/master:src/test/java/org/andersen/lab/tests/AccountTest.java
-        AccountPage accountPage = new AccountPage(getDriver()).load();
-        OrdersPage ordersPage = accountPage.login(ConfigLoader.getInstance().getUsername(), ConfigLoader.getInstance().getPassword()).
-                navigateToOrders().viewOrder();
-
-        Assert.assertEquals(ordersPage.getOrderDetailsTitle(), "Order details");
-<<<<<<<< HEAD:src/test/java/org/senla/mix/qa/tests/LoginTest.java
-    }*/
-    }
+}
 }
