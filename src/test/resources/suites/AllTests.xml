@@ -1,6 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All tests">
     <test name="Login tests">
+        <parameter name="username"  value="senlamixqa"/>
+        <parameter name="password"  value="senlamixqa"/>
         <classes>
             <class name="org.senla.mix.qa.tests.LoginTest"/>
         </classes>

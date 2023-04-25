@@ -19,7 +19,7 @@ public class FakerUtils {
         return faker.name().username();
     }
 
-    public String generateRandomPassword(){
+    public static String generateRandomPassword(){
         Faker faker = new Faker();
         return faker.internet().password();
     }

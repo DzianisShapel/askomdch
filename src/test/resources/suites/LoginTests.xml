@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Login tests" parallel="tests" thread-count="2">
+    <test name="Success Login">
+        <parameter name="username"  value="senlamixqa"/>
+        <parameter name="password"  value="senlamixqa"/>
+        <classes>
+            <class name="org.senla.mix.qa.tests.LoginTest">
+                <methods>
+                    <include name="successfulLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Incorrect Login">
+        <classes>
+            <class name="org.senla.mix.qa.tests.LoginTest">
+                <methods>
+                    <include name="incorrectLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
