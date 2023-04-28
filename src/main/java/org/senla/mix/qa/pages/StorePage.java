@@ -2,7 +2,6 @@ package org.senla.mix.qa.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.SourceType;
 import org.openqa.selenium.support.ui.Select;
 import org.senla.mix.qa.base.BasePage;
 import org.senla.mix.qa.pages.components.ProductThumbnail;
@@ -65,13 +64,9 @@ public class StorePage extends BasePage {
     public StorePage increaseStartPriceTo(double value) {
 
         if (value < 10 ) throw new RuntimeException("Start price is 10");
-
         int width = driver.findElement(By.xpath("//div[@class='ui-slider-range ui-corner-all ui-widget-header']")).getSize().getWidth();
-        System.out.println(width);
         double percent = value / 150;
-        System.out.println(percent);
         int xOffset = (int) (width * percent);
-        System.out.println(xOffset);
         Actions action = new Actions(driver);
         action.dragAndDropBy(driver.findElement(leftSliderLocator), xOffset, 0).build().perform();
         return this;
@@ -92,5 +87,4 @@ public class StorePage extends BasePage {
         dropdown.selectByValue(value);
         return this;
     }
-
 }
