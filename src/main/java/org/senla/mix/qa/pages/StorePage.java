@@ -1,14 +1,14 @@
 package org.senla.mix.qa.pages;
 
+import io.qameta.allure.Step;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.SourceType;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.senla.mix.qa.base.BasePage;
 import org.senla.mix.qa.pages.components.ProductThumbnail;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
@@ -38,6 +38,7 @@ public class StorePage extends BasePage {
         return productThumbnail;
     }
 
+    @Step("Type desired product in Search field")
     public StorePage enterTextInSearchFld(String txt) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(searchFld)).sendKeys(txt);
         return this;
@@ -48,11 +49,13 @@ public class StorePage extends BasePage {
         return this;
     }
 
+    @Step("Click Search button")
     public ProductPage searchExactProduct(String txt) {
         enterTextInSearchFld(txt).clickSearchBtn();
         return new ProductPage(driver);
     }
 
+    @Step("Click Search button")
     public StorePage clickSearchBtn() {
         wait.until(ExpectedConditions.elementToBeClickable(searchBtn)).click();
         return this;
@@ -62,21 +65,19 @@ public class StorePage extends BasePage {
         return driver.findElement(title).getText();
     }
 
+    @Step("Move slider")
     public StorePage increaseStartPriceTo(double value) {
 
         if (value < 10 ) throw new RuntimeException("Start price is 10");
 
         int width = driver.findElement(By.xpath("//div[@class='ui-slider-range ui-corner-all ui-widget-header']")).getSize().getWidth();
-        System.out.println(width);
         double percent = value / 150;
-        System.out.println(percent);
         int xOffset = (int) (width * percent);
-        System.out.println(xOffset);
         Actions action = new Actions(driver);
         action.dragAndDropBy(driver.findElement(leftSliderLocator), xOffset, 0).build().perform();
         return this;
     }
-
+    @Step("Click filter button")
     public StorePage clickFilterButton() {
         driver.findElement(filterBtn).click();
         wait.until(ExpectedConditions.urlContains("min_price="));
@@ -87,6 +88,7 @@ public class StorePage extends BasePage {
         return driver.findElements(productTitle);
     }
 
+    @Step("Filter products by Category")
     public StorePage selectCategory(String value){
         Select dropdown = new Select(driver.findElement(categoryDropdown));
         dropdown.selectByValue(value);

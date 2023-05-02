@@ -1,5 +1,6 @@
 package org.senla.mix.qa.pages;
 
+import io.qameta.allure.Step;
 import org.senla.mix.qa.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -26,6 +27,7 @@ public class AccountPage extends BasePage {
         super(driver);
     }
 
+    @Step("Login to the app")
     public AccountPage login(String username, String password){
         wait.until(ExpectedConditions.visibilityOfElementLocated(usernameForLogin)).sendKeys(username);
         driver.findElement(passwordForLogin).sendKeys(password);
@@ -33,6 +35,7 @@ public class AccountPage extends BasePage {
         return this;
     }
 
+    @Step("Register new user")
     public AccountPage register(User user) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(usernameForRegistration)).sendKeys(user.getUsername());
         driver.findElement(passwordForRegistration).sendKeys(user.getPassword());

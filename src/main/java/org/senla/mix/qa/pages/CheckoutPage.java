@@ -1,5 +1,6 @@
 package org.senla.mix.qa.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.support.ui.Select;
 import org.senla.mix.qa.base.BasePage;
 import org.senla.mix.qa.objects.BillingAddress;
@@ -87,6 +88,7 @@ public class CheckoutPage extends BasePage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(successNotice)).getText();
     }
 
+    @Step("Fill in the form")
     public CheckoutPage setBillingAddress(BillingAddress billingAddress){
         return  setFirstNameFld(billingAddress.getFirstName()).
                 setLastNameFld(billingAddress.getLastName()).

@@ -1,5 +1,6 @@
 package org.senla.mix.qa.pages;
 
+import io.qameta.allure.Step;
 import org.senla.mix.qa.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -20,6 +21,7 @@ public class CartPage extends BasePage {
         return this;
     }
 
+    @Step("Go to checkout")
     public CheckoutPage checkout(){
         wait.until(ExpectedConditions.elementToBeClickable(checkoutBtn)).click();
         return new CheckoutPage(driver);
