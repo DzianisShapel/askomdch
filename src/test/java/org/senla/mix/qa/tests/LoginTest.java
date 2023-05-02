@@ -11,9 +11,6 @@ import org.testng.annotations.Test;
 public class LoginTest extends BaseTest {
 
 
-public class AccountTest extends BaseTest {
-
-
     @Test
     public void successfullLogin() {
         AccountPage accountPage = new AccountPage(getDriver()).load();
@@ -30,6 +27,4 @@ public class AccountTest extends BaseTest {
 
         Assert.assertEquals(accountPage.getErrorMessage(), "Error: The password you entered for the username " + ConfigLoader.getInstance().getUsername() + " is incorrect. Lost your password?");
     }
-
-}
 }
