@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.senla.mix.qa.constants.DriverType;
 
 public class DriverManager {
@@ -21,7 +22,9 @@ public class DriverManager {
                 break;
             case FIREFOX:
                 WebDriverManager.firefoxdriver().cachePath("Drivers").setup();
-                driver = new FirefoxDriver();
+                FirefoxOptions foptions = new FirefoxOptions();
+                foptions.setHeadless(true);
+                driver = new FirefoxDriver(foptions);
                 break;
             default:
                 throw new IllegalStateException("Invalid browser name: " + browser);
