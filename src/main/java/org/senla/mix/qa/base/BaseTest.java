@@ -21,16 +21,16 @@ import java.util.List;
 public class BaseTest {
     private ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-    @Parameters("browser")
+
     @BeforeMethod
-    public synchronized void startDriver(@Optional String browser) {
-        browser = System.getProperty("browser", browser);
+    public synchronized void startDriver() {
+        String browser = System.getProperty("browser");
         setDriver(new DriverManager().initializeDriver(browser));
     }
 
-    @Parameters("browser")
+
     @AfterMethod
-    public synchronized void quitDriver(@Optional String browser, ITestResult result) throws InterruptedException, IOException {
+    public synchronized void quitDriver(String browser, ITestResult result) throws InterruptedException, IOException {
         Thread.sleep(100);
         LogEntries browserLogs = getDriver().manage().logs().get(LogType.BROWSER);
         List<LogEntry> allLogRows = browserLogs.getAll();
