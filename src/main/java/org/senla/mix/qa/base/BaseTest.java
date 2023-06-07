@@ -14,14 +14,12 @@ import java.io.IOException;
 public class BaseTest {
     private ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-    @Muted
     @BeforeMethod
     public synchronized void startDriver() {
         String browser = System.getProperty("browser");
         setDriver(new DriverManager().initializeDriver(browser));
     }
 
-    @Muted
     @AfterMethod
     public synchronized void quitDriver() throws InterruptedException, IOException {
        /* Thread.sleep(100);

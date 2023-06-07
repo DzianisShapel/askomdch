@@ -1,5 +1,6 @@
 package org.senla.mix.qa.tests;
 
+import io.qameta.allure.Flaky;
 import org.openqa.selenium.WebElement;
 import org.senla.mix.qa.base.BaseTest;
 import org.senla.mix.qa.pages.StorePage;
@@ -10,6 +11,7 @@ import java.util.List;
 
 public class StoreTest extends BaseTest {
 
+    @Flaky
     @Test
     public void filterProductsByIncreasingPrice() {
         double filterPrice = 130;
