@@ -1,6 +1,7 @@
 package org.senla.mix.qa.base;
 
 
+import io.qameta.allure.Muted;
 import org.senla.mix.qa.factory.DriverManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
@@ -9,17 +10,18 @@ import org.testng.annotations.BeforeMethod;
 
 import java.io.IOException;
 
+
 public class BaseTest {
     private ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-
+    @Muted
     @BeforeMethod
     public synchronized void startDriver() {
         String browser = System.getProperty("browser");
         setDriver(new DriverManager().initializeDriver(browser));
     }
 
-
+    @Muted
     @AfterMethod
     public synchronized void quitDriver() throws InterruptedException, IOException {
        /* Thread.sleep(100);
