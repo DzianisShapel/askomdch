@@ -1,5 +1,6 @@
 package org.senla.mix.qa.tests;
 
+import io.qameta.allure.Description;
 import org.senla.mix.qa.base.BaseTest;
 import org.senla.mix.qa.objects.Product;
 import org.senla.mix.qa.pages.ProductPage;
@@ -11,6 +12,7 @@ import java.io.IOException;
 public class SearchTest extends BaseTest {
 
     @Test
+    @Description("Search product by id")
     public void searchSpecificProduct() throws IOException {
         Product product = new Product(1202);
         ProductPage productPage = new StorePage(getDriver()).

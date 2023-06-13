@@ -1,5 +1,8 @@
 package org.senla.mix.qa.tests;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Issue;
+import io.qameta.allure.Link;
 import org.senla.mix.qa.base.BaseTest;
 import org.senla.mix.qa.pages.AccountPage;
 import org.senla.mix.qa.utils.ConfigLoader;
@@ -8,7 +11,10 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {
+
+    @Link("customLink")
     @Test
+    @Description("Login to the app with valid credentials")
     public void successfullLogin() {
         AccountPage accountPage = new AccountPage(getDriver()).load();
         accountPage.login(ConfigLoader.getInstance().getUsername(), ConfigLoader.getInstance().getPassword());
@@ -17,7 +23,9 @@ public class LoginTest extends BaseTest {
                 + ConfigLoader.getInstance().getUsername() + "? Log out")));
     }
 
+    @Issue("customIssue")
     @Test
+    @Description("Login to the app with invalid password")
     public void loginWithIncorrectPassword() {
         AccountPage accountPage = new AccountPage(getDriver()).load();
         accountPage.login(ConfigLoader.getInstance().getUsername(), new FakerUtils().generateRandomPassword());

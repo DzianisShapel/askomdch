@@ -1,5 +1,6 @@
 package org.senla.mix.qa.tests;
 
+import io.qameta.allure.Description;
 import org.senla.mix.qa.base.BaseTest;
 import org.senla.mix.qa.objects.User;
 import org.senla.mix.qa.pages.AccountPage;
@@ -11,6 +12,7 @@ import org.testng.annotations.Test;
 public class RegistrationTest extends BaseTest {
 
     @Test
+    @Description("Register a new user")
     public void successfullRegistration() {
         AccountPage accountPage = new AccountPage(getDriver()).load();
         User user = createUserData();

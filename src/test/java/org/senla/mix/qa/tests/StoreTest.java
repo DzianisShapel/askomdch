@@ -1,5 +1,6 @@
 package org.senla.mix.qa.tests;
 
+import io.qameta.allure.Description;
 import io.qameta.allure.Flaky;
 import org.openqa.selenium.WebElement;
 import org.senla.mix.qa.base.BaseTest;
@@ -13,6 +14,7 @@ public class StoreTest extends BaseTest {
 
     @Flaky
     @Test
+    @Description("Filter products by browser")
     public void filterProductsByIncreasingPrice() {
         double filterPrice = 130;
         StorePage storePage = new StorePage(getDriver()).load();
@@ -25,6 +27,7 @@ public class StoreTest extends BaseTest {
     }
 
     @Test
+    @Description("Filter products by categories")
     public void browseByCategories() {
         String category = "accessories";
         StorePage storePage = new StorePage(getDriver()).load().selectCategory(category);

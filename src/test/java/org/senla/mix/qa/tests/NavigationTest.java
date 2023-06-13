@@ -1,5 +1,6 @@
 package org.senla.mix.qa.tests;
 
+import io.qameta.allure.Description;
 import org.senla.mix.qa.base.BaseTest;
 import org.senla.mix.qa.pages.ContactPage;
 import org.senla.mix.qa.pages.HomePage;
@@ -10,6 +11,7 @@ import org.testng.asserts.SoftAssert;
 public class NavigationTest extends BaseTest {
 
     @Test
+    @Description("Navigate to Contact page")
     public void navigateToContactPage(){
         ContactPage contactPage = new HomePage(getDriver()).load()
                 .getAppHeader().navigateToContactPage();
@@ -18,6 +20,7 @@ public class NavigationTest extends BaseTest {
     }
 
     @Test
+    @Description("Navigate to Store page")
     public void navigateToStorePage(){
         StorePage storePage = new HomePage(getDriver()).load().getAppHeader()
                 .navigateToStorePage();

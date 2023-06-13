@@ -1,5 +1,6 @@
 package org.senla.mix.qa.tests;
 
+import io.qameta.allure.Description;
 import org.senla.mix.qa.base.BaseTest;
 import org.senla.mix.qa.objects.BillingAddress;
 import org.senla.mix.qa.objects.Product;
@@ -15,6 +16,7 @@ public class OrderProductTest  extends BaseTest {
 
 
     @Test
+    @Description("Not logged in user orders product")
     public void GuestOrderFeaturedProduct () throws IOException {
         BillingAddress billingAddress = JacksonUtils.deserializeJson("myBillingAddress.json", BillingAddress.class);
         Product product = new Product(1215);
