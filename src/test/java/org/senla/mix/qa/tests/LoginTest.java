@@ -15,7 +15,7 @@ public class LoginTest extends BaseTest {
 
     @Link("customLink")
     @TmsLink("linkToTestRail")
-    @Test
+    @Test(description = "Login to the app with valid credentials")
     @Description("Login to the app with valid credentials")
     public void successfullLogin() {
         AccountPage accountPage = new AccountPage(getDriver()).load();
@@ -27,7 +27,7 @@ public class LoginTest extends BaseTest {
 
     @Issue("customIssue")
     @TmsLink("linkToTestRail")
-    @Test
+    @Test(description = "Login to the app with invalid password")
     @Description("Login to the app with invalid password")
     public void loginWithIncorrectPassword() {
         AccountPage accountPage = new AccountPage(getDriver()).load();
