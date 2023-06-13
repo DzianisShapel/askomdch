@@ -11,7 +11,7 @@ import org.testng.asserts.SoftAssert;
 public class NavigationTest extends BaseTest {
 
     @Test
-    @Description("Navigate to Contact page")
+    @Description("Navigate to Contact Us page")
     public void navigateToContactPage(){
         ContactPage contactPage = new HomePage(getDriver()).load()
                 .getAppHeader().navigateToContactPage();

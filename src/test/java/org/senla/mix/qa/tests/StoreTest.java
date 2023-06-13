@@ -14,7 +14,7 @@ public class StoreTest extends BaseTest {
 
     @Flaky
     @Test
-    @Description("Filter products by browser")
+    @Description("Filter products by slider")
     public void filterProductsByIncreasingPrice() {
         double filterPrice = 130;
         StorePage storePage = new StorePage(getDriver()).load();

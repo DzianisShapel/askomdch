@@ -1,6 +1,7 @@
 package org.senla.mix.qa.tests;
 
 import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import org.senla.mix.qa.base.BaseTest;
 import org.senla.mix.qa.objects.User;
 import org.senla.mix.qa.pages.AccountPage;
@@ -21,6 +22,7 @@ public class RegistrationTest extends BaseTest {
                 + user.getUsername() + "? Log out")));
     }
 
+    @Step("Prepare user data")
     private User createUserData(){
         User user = new User();
         user.setUsername(new FakerUtils().generateFirstName());
